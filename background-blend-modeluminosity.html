@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .box{
+            width: 800px;
+            height:600px;
+            margin: 0 auto;
+            border:16px solid transparent;
+            /* border-image:16 repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em);*/
+            border-image: repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em) 16 16 16 16 repeat;
+            font:bold 20px/1.45em Microsoft yahei;
+            color:white;
+            text-align: center;
+            background-color: hsla(335,100%,50%,1);
+            background-image: url("images/tiger.jpg");
+            background-repeat: no-repeat;
+            background-origin:content-box;
+            background-size:100% 100%;
+            background-blend-mode: luminosity;
+            transition:all .5s linear;
+
+        }
+        .box:hover{
+            background-color: hsla(335,100%,50%,0);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+ <span>
+      背景这个东西很麻烦，也有很多值得钻研的地方，
+     设置背景的时候请务必按照一定的逻辑顺序去写background的语句，
+     还涉及到一些优先级的问题！值得思考,
+     这是一个老外提出的混合模式的动画技巧！ 
+     <a href="http://demosthenes.info/blog/888/Vreate-Monochromativ-Color-Tinter-Images-With-CSS-blend" target="_blank">
+         <em>Dodley Storey</em>
+     </a>
+ </span>
+</div>
+</body>
+</html>

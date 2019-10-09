@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        From  CSS Secret--Lea Verou 作者学习制作
+    </title>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .box{
+            width: 900px;
+            height:600px;
+            margin: 0 auto;
+            border:16px solid transparent;
+            /* border-image:16 repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em);*/
+            border-image: repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em) 16 16 16 16 repeat;
+            font-family: Microsoft yahei;
+            font-size:13px;
+            color:tan;
+            text-align: center;
+            line-height:1.45em;
+            position: relative;
+        }
+        .radius{
+            display: inline-block;
+            width:300px;
+            height: 500px;px;
+            background:rgba(64,224,208,.8);
+
+            border-radius:100% 100% 100% 100%/50px;
+
+        }
+        .sub{
+            display: inline-block;
+            width:300px;
+            height: 500px;px;
+            background:rgba(64,224,208,.5);
+            position: absolute;
+            left:300px;
+            z-index: -1;
+            border-radius:50% 50% 50% 100%/50px 50px 50px 50px;
+            transform-origin: center center;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="radius"></div><div class="sub"></div>
+</div>
+
+transform:rotateX<input type="range" max="360" min="-360" value="0" id="rangeX"><input type="text" id="numX" value="0"><br>
+transform:rotateY<input type="range" max="360" min="-360" value="0" id="rangeY"><input type="text" id="numY" value="0"><br>
+transform:rotateZ<input type="range" max="360" min="-360" value="0" id="rangeZ"><input type="text" id="numZ" value="0"><br>
+
+<script>
+    var rangeX=document.getElementById("rangeX");
+    var numX=document.getElementById("numX");
+    var rangeY=document.getElementById("rangeY");
+    var numY=document.getElementById("numY");
+    var rangeZ=document.getElementById("rangeZ");
+    var numZ=document.getElementById("numZ");
+   rangeX.onmousemove=function(){
+      numX.value=rangeX.value;
+       document.getElementsByClassName("sub")[0].style="transform:rotateX(" + rangeX.value +"deg)";
+   }
+    rangeY.onmousemove=function(){
+        numY.value=rangeY.value;
+        document.getElementsByClassName("sub")[0].style="transform:rotateY(" + rangeY.value +"deg)";
+    }
+    rangeZ.onmousemove=function(){
+        numZ.value=rangeZ.value;
+        document.getElementsByClassName("sub")[0].style="transform:rotateZ(" + rangeZ.value +"deg)";
+    }
+
+</script>
+</body>
+</html>

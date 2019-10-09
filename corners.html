@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        From  CSS Secret--Lea Verou 作者学习制作
+    </title>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+        div{
+            margin: 0 auto;
+        }
+        .box{
+            width:100px;
+            height: 50px;
+            background:linear-gradient( -45deg,blue 10%,red 0%);
+                      /* linear-gradient(45deg,#58a 60%,transparent 40%) ;*/
+           -webkit-clip-path:polygon(0 0,100% 0,100% 69%,84% 100%,0 100%);
+        }
+        .arc_Corners{
+            width:200px;
+            height:168px;
+            background: tan;
+            background:radial-gradient(circle at left top,transparent 15px,#58a 0)left top ,
+                       radial-gradient(circle at right top,transparent 15px,#58a 0)right top,
+                       radial-gradient(circle at right bottom,transparent 15px,#58a 0)right bottom,
+                       radial-gradient(circle at left bottom,transparent 15px,#58a 0)left bottom;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            /*这些是多重背景的必备条件，都要写清楚它才允许出现*/
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<br>
+<div class="arc_Corners">
+
+</div>
+</body>
+</html>

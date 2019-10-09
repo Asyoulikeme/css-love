@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        From  CSS Secret--Lea Verou 作者学习制作
+    </title>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .box{
+            width: 800px;
+            height:600px;
+            margin: 0 auto;
+            border:16px solid transparent;
+            /* border-image:16 repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em);*/
+            border-image: repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em) 16 16 16 16 repeat;
+            font-family: Microsoft yahei;
+            font-size:13px;
+            color:tan;
+            text-align: center;
+            line-height:1.45em;
+        }
+        /*对于clip-path来说，它支持css3动画，也支持鼠标事件，鼠标事件的前提条件的函数相同并且要括号内的值的个数相同
+        animation的前提条件是需要函数相同才能进行平滑的过渡，不然就无法平滑，设置任何的方式都没用比如（linear，ease....等等）这是没用的，必须函数相同
+        Example
+        polygon-polygon √
+        polygon-circle x
+        */
+        img{
+
+            height:600px;
+
+            -webkit-clip-path: polygon(50% 0,0 50%,50% 100%,100% 50%); /*想象笛卡尔坐标并在上面画路径*/
+            -webkit-transition:all .5s ease-in-out;
+
+        }
+
+        img:hover{
+           -webkit-clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+
+        }
+        ul,li{
+            list-style: none;
+        }
+        .bg{
+            width: 20%;
+            height:200px;
+            float: left;
+            background:url(images/8d5726a9c870.jpg);
+            -webkit-background-size:;
+            background-size:100% 200px;
+            margin-left:10%;
+        }
+        #ellipse{
+            -webkit-clip-path:ellipse(30% 20% at 50% 50%);/*椭圆的x&y轴半径at椭圆的开始位置*/
+        }
+        #circle{
+            -webkit-clip-path:circle(40% at 50% 50%);/*圆的半径at圆心的开始点*/
+        }
+        #inset{
+            -webkit-clip-path:inset(25% 5% 25% 5% round 5% 25% 5% 25%);/*inset(<top> <right> <bottom> <left> round <top-radius> <right-radius> <bottom-radius> <left-radius>)*/
+            /*这里看不懂可以改动前面四个值就能看懂了，前面四个值是指定 从什么地方开始切 从上方25%处切一刀
+                                                                                   从右边5%处切一刀
+                                                                                   从下面25%处切一刀
+                                                                                   从左边5%处切一刀
+                                                                                   round ----弧-圆
+                                                                                   */
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="images/8d5726a9c870.jpg">
+</div>
+<ul>
+    <li class="bg" id="ellipse"></li>
+    <li class="bg" id="circle"></li>
+    <li class="bg" id="inset"></li>
+</ul>
+</body>
+</html>

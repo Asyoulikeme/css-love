@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        From  CSS Secret--Lea Verou 作者学习制作
+    </title>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .box{
+            width: 500px;
+            height:300px;
+            margin: 0 auto;
+            border:16px solid transparent;
+            border-image:20 repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em);
+            /*border-image: repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em) 16 16 16 16 repeat;*/
+            font-family: Microsoft yahei;
+            font-size:13px;
+            color:tan;
+            text-align: center;
+            line-height:1.45em;
+        }
+        .run{
+            width: 200px;
+            height: 45px;
+            padding:1em;
+
+            border:1px solid transparent;
+            background:linear-gradient(white,white) padding-box,
+            repeating-linear-gradient(-45deg,black 0,black 25%,white 0,white 50%)0/.6em .6em;
+            animation:ants 12s linear infinite;
+        }
+        @keyframes ants{
+            to{background-position: 100%;}
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+这个盒子由 border-image 语句完成，有两条写法，缩写形式不同
+    1:border-image:16 repeating-linear-gradient  <br>
+    (-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em);<br>
+    <br>
+    <br>
+    2:border-image: repeating-linear-gradient<br>
+    (-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em) 16 16 16 16 repeat;<br>
+</div>
+<div class="run"></div>
+</body>
+</html>

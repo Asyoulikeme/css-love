@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chatset="utf-8">
+    <title></title>
+    <style>
+    .loader{
+        width:100px;
+        height:100px;
+        background:url(images/loader.png) 0 0;
+        text-indent:200%;
+        white-space: nowrap;
+        overflow:hidden;
+        animation:loader 1s steps(8) infinite;/*steps()是硬切换动画，把整个动画切分为多帧，不做任何插值处理*/
+
+    }
+        @keyframes loader {
+            to{background-position:-800px 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+
+    </div>
+</body>
+</html>

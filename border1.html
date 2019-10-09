@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		From  CSS Secret--Lea Verou 作者学习制作
+	</title>
+	<meta charset="utf-8">
+<title></title>
+<style>
+.box{
+	width: 500px;
+	height: 500px;
+	padding: 1em;
+	border:1.5em solid transparent;
+	/*background: linear-gradient(white,white),
+				url(stone-art.jpg);
+	background-size:cover;
+	background-clip: padding-box,border-box;
+	background-origin: padding-box,border-box;*/
+	/*分析:  整合语句的第一条属性，使得背景接收一层白色到白色的线性渐变
+	空格 从填充盒子显示,第二条属性使得背景接收一层图片背景 空格 从 边框盒子显示
+	最后一条整合的属性指的是：第一层从原地开始显示，第二层从边框盒子开始显示，
+	最后一条整合属性是第一层大小为100%，第二层的图片覆盖*/
+	background: linear-gradient(white,white) padding-box,url(images/stone-art.jpg) border-box 100%/cover;
+	
+
+}
+</style>
+</head>
+<body>
+<div class="box">
+	分析:  整合语句的第一条属性，使得背景接收一层白色到白色的线性渐变 空格 从填充盒子显示,第二条属性使得背景接收一层图片背景 空格 从 边框盒子显示 最后一条整合的属性指的是：第一层从原地开始显示，第二层从边框盒子开始显示，最后一条整合属性是第一层大小为100%，第二层的图片覆盖
+</div>
+</body>
+</html>

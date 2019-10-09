@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        From  CSS Secret--Lea Verou 作者学习制作
+    </title>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        input[type="checkbox"]+label::before{
+            content: '\a0';
+            display: inline-block;
+            vertical-align: .2em;
+            width:.8em;
+            height: .8em;
+            margin-right: .2em;
+            border-radius: .2em;
+            background: silver;
+            text-indent: .15em;
+            line-height: .65;
+        }
+        input[type="checkbox"]:checked+label::before{
+            content:'\2713';
+            background:yellowgreen;
+        }
+        input[type="checkbox"]{
+            position: absolute;
+            clip:rect(0 0 0 0);
+
+        }
+        input[type="checkbox"]:focus+label::before{
+            background:gray;
+            box-shadow:none;
+            color:#555;
+        }
+    </style>
+</head>
+<body>
+
+
+<input type="checkbox" id="awesome" />
+<label for="awesome">Awesome</label>
+
+</body>
+
+</html>

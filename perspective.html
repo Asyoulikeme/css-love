@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        From  CSS Secret--Lea Verou 作者学习制作
+    </title>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .box{
+            width: 800px;
+            height:600px;
+            margin: 0 auto;
+            border:16px solid transparent;
+            /* border-image:16 repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em);*/
+            border-image: repeating-linear-gradient(-45deg,red 0,red 1em,transparent 0,transparent 2em,#58a 0,#58a 3em,transparent 0,transparent 4em) 16 16 16 16 repeat;
+            font-family: Microsoft yahei;
+            font-size:13px;
+            color:tan;
+            text-align: center;
+            line-height:1.45em;
+        }
+        .tab{
+            position: relative;
+            display: inline-block;
+            padding:.5em 1em .35em;
+            color:white;
+            background: rgba(0,0,0,.5);
+        }
+        .tab::before{
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index: -1;
+            background: #58a;
+            transform: perspective(.5em) rotateX(5deg);
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span class="tab">TRAPEZOID</span>
+</div>
+</body>
+</html>

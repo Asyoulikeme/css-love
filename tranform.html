@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chatset="utf-8">
+    <title></title>
+    <style>
+        *{
+            marging:0;
+            padding:0;
+        }
+    .see {
+        width: 800px;
+        height: 600px;
+        border:5px dashed lightsalmon;
+        transform-origin:left top;
+        position: absolute;
+        top:calc(50vh);
+        left:calc(50vw);
+        transform:translate(-400px,-300px);
+        perspective:10000px;/*视距*/
+        perspective-origin:80% -150px;
+    }
+    .box{
+        width:300px;
+        height:300px;
+        background: #03a9f4;
+        transform-style:preserve-3d;
+        position: fixed;
+        top:calc(50%);
+        left:calc(50%);
+       /* transform:translate(-150px,-150px);*/
+    }
+        #range{
+            margin:0 auto;
+            margin-top:60%;
+        }
+    </style>
+</head>
+<body>
+<div class="see">
+    <div class="box">
+
+        <div class="que"></div>
+    </div>
+    <input type="range" id="range" max="360" min="-360">
+    <input type="text" id="valtext" value="">
+</div>
+<script>
+    window.onload=function(){
+        var range=document.getElementById("range");
+        var valtext=document.getElementById("valtext");
+        var box=document.getElementsByClassName("box")[0];
+       // alert(box);
+        range.onmousemove=function(){
+            valtext.value=range.value;
+            box.style="transform:rotateY("+range.value+"deg)";
+        };
+
+       // alert(range.value);
+    }
+</script>
+</body>
+</html>
